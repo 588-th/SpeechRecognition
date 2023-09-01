@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <LangVersion Condition="'$(MSBuildProjectExtension)'=='.csproj'">preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{38BB9986-E2A5-4D42-9AC6-21BCAE37AA7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Common</RootNamespace>
+    <AssemblyName>Common</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.2.1.0\lib\net472\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Asio.2.1.0\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Core.2.1.0\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Midi.2.1.0\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.Wasapi.2.1.0\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinForms.2.1.0\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.1.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.WinMM.2.1.0\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AudioFile.cs" />
+    <Compile Include="Classes\ValidationData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\ProjectSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_А.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_Е.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_И.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_О.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_У.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_Э.wav" />
+    <Content Include="Training\Audio\Letters\Алёна\Алёна_Я.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_А.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_Е.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_И.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_О.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_У.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_Э.wav" />
+    <Content Include="Training\Audio\Letters\Алиса\Алиса_Я.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_А.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_Е.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_И.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_О.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_У.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_Э.wav" />
+    <Content Include="Training\Audio\Letters\Борис\Борис_Я.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Два.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Двадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Двенадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Девять.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Десять.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Ноль.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Один.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Пять.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Семнадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Семь.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Три.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Тринадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Четыре.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитрий_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитриц_Восемь.wav" />
+    <Content Include="Training\Audio\Letters\Дмитрий\Дмитриц_Шесть.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_А.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_Е.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_И.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_О.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_У.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_Э.wav" />
+    <Content Include="Training\Audio\Letters\Ермил\Ермил_Я.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_А.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_Е.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_И.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_О.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_У.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_Э.wav" />
+    <Content Include="Training\Audio\Letters\Жанна\Жанна_Я.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_А.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_Е.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_И.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_О.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_У.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_Э.wav" />
+    <Content Include="Training\Audio\Letters\Катя\Катя_Я.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_А.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_Е.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_И.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_О.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_У.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_Э.wav" />
+    <Content Include="Training\Audio\Letters\Марк\Марк_Я.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_А.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_Е.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_И.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_О.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_У.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_Э.wav" />
+    <Content Include="Training\Audio\Letters\Милена\Милена_Я.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_Ё.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_А.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_Е.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_И.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_О.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_У.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_Ы.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_Э.wav" />
+    <Content Include="Training\Audio\Letters\Филипп\Филипп_Я.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алёна\Алёна_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Семнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Алиса\Алиса_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Семнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Борис\Борис_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_Ё.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_А.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_Е.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_И.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_О.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_У.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_Ы.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_Э.wav" />
+    <Content Include="Training\Audio\Numbers\Дмитрий\Дмитрий_Я.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Семнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Ермил\Ермил_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Семнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Жанна\Жанна_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Катя\Катя_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Семнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Марк\Марк_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Семнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Милена\Милена_Шесть.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Восемнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Восемь.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Два.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Двадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Двенадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Девятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Девять.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Десять.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Ноль.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Один.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Одиннадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Пятнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Пять.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Семнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Семь.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Три.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Тринадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Четыре.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Четырнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Шестнадцать.wav" />
+    <Content Include="Training\Audio\Numbers\Филипп\Филипп_Шесть.wav" />
+    <Content Include="Training\Audio\Pangrams\Алёна\Алёна_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Алёна\Алёна_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Алёна\Алёна_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Алиса\Алиса_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Алиса\Алиса_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Алиса\Алиса_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Борис\Борис_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Борис\Борис_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Борис\Борис_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Дмитрий\Дмитриц_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Дмитрий\Дмитриц_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Дмитрий\Дмитриц_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Ермил\Ермил_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Ермил\Ермил_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Ермил\Ермил_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Жанна\Жанна_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Жанна\Жанна_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Жанна\Жанна_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Катя\Катя_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Катя\Катя_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Катя\Катя_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Марк\Марк_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Марк\Марк_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Марк\Марк_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Милена\Милена_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Милена\Милена_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Милена\Милена_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Audio\Pangrams\Филипп\Филипп_ПанаграммаБулки.wav" />
+    <Content Include="Training\Audio\Pangrams\Филипп\Филипп_ПанаграммаШкольники.wav" />
+    <Content Include="Training\Audio\Pangrams\Филипп\Филипп_ПанаграммаЭсминец.wav" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Eight.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Five.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Four.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Nine.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_One.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Seven.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Six.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Ten.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Three.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Two.txt" />
+    <Content Include="Training\Transcriptions\Number\Joey\Joey_Zero.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Eight.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Five.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Four.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Nine.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_One.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Seven.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Six.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Ten.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Three.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Two.txt" />
+    <Content Include="Training\Transcriptions\Number\Travis\Travis_Zero.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Eight.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Five.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Four.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Nine.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_One.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Seven.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Six.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Ten.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Three.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Two.txt" />
+    <Content Include="Training\Transcriptions\Number\Winston\Winston_Zero.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

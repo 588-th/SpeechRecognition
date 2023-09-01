@@ -1,0 +1,43 @@
+﻿<Window x:Class="SpeechRecognition.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpeechRecognition"
+        mc:Ignorable="d"
+        Height="475" Width="800"
+        MinHeight="475" MinWidth="800"
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="245"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Background="#121212">
+            <Button x:Name="ButtonRecognize" Content="Recognize" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="70,10,0,0" Width="100" Height="30" FontWeight="Bold" FontSize="14" Foreground="White" Background="#FF2EA650" Click="ButtonRecognize_Click"/>
+            <TextBox x:Name="TextBoxFileName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,50,0,0" Width="200" Height="30" FontWeight="Bold" FontSize="14" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <ComboBox x:Name="ComboBoxFileName" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,85,0,0" Width="200" Height="30" FontWeight="Bold" FontSize="14" Background="White"/>
+
+            <Button x:Name="ButtonRetrain" Content="Retrain" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,80" Width="100" Height="30" FontWeight="Bold" FontSize="14" Foreground="White" Background="#bf0c34" Click="ButtonRetrain_Click"/>
+            <TextBox x:Name="TextBoxNumStates" Text="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,37" Width="60" Height="30" FontWeight="Bold" FontSize="16" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="TextBoxNumObservations" Text="12" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="90,0,0,37" Width="60" Height="30" FontWeight="Bold" FontSize="16" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="TextBoxNumIterations" Text="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="170,0,0,37" Width="60" Height="30" FontWeight="Bold" FontSize="16" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="TextBoxNumDifferentNumbers" Text="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="15,0,0,80" Width="30" Height="30" FontWeight="Bold" FontSize="16" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Label x:Name="LabelNumOvertraining" Content="NumOvertrain: 0" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="15,0,0,122" VerticalAlignment="Bottom"/>
+            <Label x:Name="LabelRetrainTime" Content="RetrainTime: 00:00:00" Foreground="White" FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Margin="15,0,0,159" VerticalAlignment="Bottom"/>
+
+        </Grid>
+
+        <Grid Grid.Column="1" Background="#212121">
+            <TextBlock x:Name="TextBlockRecognizedStates" Text="RecognizedStates" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" FontWeight="Bold" FontSize="14" Foreground="White" TextWrapping="Wrap"/>
+        </Grid>
+
+    </Grid>
+
+</Window>
